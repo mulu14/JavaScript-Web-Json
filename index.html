@@ -1,0 +1,396 @@
+<!---
+File: index.html
+
+This file contains the basic HTML structure in order to to create an interface for a vending machine for a company with the purpose to facilitate the purchases of beverages. 
+
+Version 2.0
+Author: Lukas Enander, Moa Mattsson, Siri Persson and Mulugeta Forsido Werkensche
+
+Requires the following files:
+
+reset.css
+styles.css
+index.css
+
+localStorage.js
+script.js
+index.js
+logged.js
+admin.js
+dict_index.js
+
+-->
+
+
+<!doctype html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="js/localStorage.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/logged.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/dict_index.js"></script>
+
+
+
+    <title> Jamaica </title>
+
+
+
+</head>
+
+<body>
+
+    <!---
+Creating a script that calls on funtions when the body of the page is loaded. 
+- checkLogged() checks if the user is logged in. Returns true or false
+- initialize() checks which beverages that is in the vending machine. 
+-->
+
+    <script>
+        document.body.onload = function() {
+            checkLogged();
+            initialize();
+        };
+
+    </script>
+
+    <!---
+Header containing title, the manu bar with options and language support options. 
+-->
+
+    <header>
+        <a href="javascript:void(0)" id="admin_text">Admin</a>
+        <h1 id="title"> Jamaica Inn </h1>
+        <ul id="flags">
+            <img src="img/swe.png" id="swe" onclick="translateFunctionSwe()">
+            <img src="img/uk.png" id="en" onclick="translateFunctionEn()">
+        </ul>
+        <nav>
+
+            <ul id=menu>
+                <li><a id="leftmenu" href="index.html" class="current">Start</a></li>
+                <li><a id="profiletab" href="javascript:void(0)">My profile</a>
+                </li>
+            </ul>
+            <a id="status_loged_in"></a>
+            <ul id="logout">
+                <li><a href="index.html">Log out</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!---
+Provides structure for the vending machine with it current beverages, including support for drag and drop. The vending machine has a maximum of 20 beverages. The emtpy slots are hidden in the javascript if no beverage is assigned to that slot. 
+-->
+
+    <div id="store">
+        <div id="beverages" class="box">
+            <ul class="bev_list">
+
+                <li id="0" draggable="true" ondragstart="drag(event)">
+                    <div id="div1">
+                        <div id="corner">
+                            <a id="count"></a>
+                        </div>
+                        <img id="dropimage" draggable="false">
+                        <img src="img/cross.png" id="cross" draggable="false">
+                        <a class="bev_name"></a>
+                        <a class="bev_price"></a>
+                    </div>
+
+                </li>
+
+                <li id="1" draggable="true" ondragstart="drag(event)">
+                    <div id="div1">
+                        <div id="corner">
+                            <a id="count"></a>
+                        </div>
+                        <img id="dropimage" draggable="false">
+                        <img src="img/cross.png" id="cross" draggable="false">
+                        <a class="bev_name"></a>
+                        <a class="bev_price"></a>
+                    </div>
+
+                </li>
+                <li id="2" draggable="true" ondragstart="drag(event)">
+                    <div id="div1">
+                        <div id="corner">
+                            <a id="count"></a>
+                        </div>
+                        <img id="dropimage" draggable="false">
+                        <img src="img/cross.png" id="cross" draggable="false">
+                        <a class="bev_name"></a>
+                        <a class="bev_price"></a>
+                    </div>
+
+                </li>
+                <li id="3" draggable="true" ondragstart="drag(event)">
+                    <div id="div1">
+                        <div id="corner">
+                            <a id="count"></a>
+                        </div>
+                        <img id="dropimage" draggable="false">
+                        <img src="img/cross.png" id="cross" draggable="false">
+                        <a class="bev_name"></a>
+                        <a class="bev_price"></a>
+                    </div>
+
+                </li>
+                <li id="4" draggable="true" ondragstart="drag(event)">
+                    <div id="div1">
+                        <div id="corner">
+                            <a id="count"></a>
+                        </div>
+                        <img id="dropimage" draggable="false">
+                        <img src="img/cross.png" id="cross" draggable="false">
+                        <a class="bev_name"></a>
+                        <a class="bev_price"></a>
+                    </div>
+
+                </li>
+                <li id="5" draggable="true" ondragstart="drag(event)">
+                    <div id="div1">
+                        <div id="corner">
+                            <a id="count"></a>
+                        </div>
+                        <img id="dropimage" draggable="false">
+                        <img src="img/cross.png" id="cross" draggable="false">
+                        <a class="bev_name"></a>
+                        <a class="bev_price"></a>
+                    </div>
+
+                </li>
+                <li id="6" draggable="true" ondragstart="drag(event)">
+                    <div id="div1">
+                        <div id="corner">
+                            <a id="count"></a>
+                        </div>
+                        <img id="dropimage" draggable="false">
+                        <img src="img/cross.png" id="cross" draggable="false">
+                        <a class="bev_name"></a>
+                        <a class="bev_price"></a>
+                    </div>
+
+                </li>
+                <li id="7" draggable="true" ondragstart="drag(event)">
+                    <div id="div1">
+                        <div id="corner">
+                            <a id="count"></a>
+                        </div>
+                        <img id="dropimage" draggable="false">
+                        <img src="img/cross.png" id="cross" draggable="false">
+                        <a class="bev_name"></a>
+                        <a class="bev_price"></a>
+                    </div>
+
+                </li>
+                <li id="8" draggable="true" ondragstart="drag(event)">
+                    <div id="div1">
+                        <div id="corner">
+                            <a id="count">10</a>
+                        </div>
+                        <img id="dropimage" draggable="false">
+                        <img src="img/cross.png" id="cross" draggable="false">
+                        <a class="bev_name"></a>
+                        <a class="bev_price"></a>
+                    </div>
+
+                </li>
+                <li id="9" draggable="true" ondragstart="drag(event)">
+                    <div id="div1">
+                        <div id="corner">
+                            <a id="count"></a>
+                        </div>
+                        <img id="dropimage" draggable="false">
+                        <img src="img/cross.png" id="cross" draggable="false">
+                        <a class="bev_name"></a>
+                        <a class="bev_price"></a>
+                    </div>
+
+                </li>
+                <li id="10" draggable="true" ondragstart="drag(event)">
+                    <div id="div1">
+                        <div id="corner">
+                            <a id="count"></a>
+                        </div>
+                        <img id="dropimage" draggable="false">
+                        <img src="img/cross.png" id="cross" draggable="false">
+                        <a class="bev_name"></a>
+                        <a class="bev_price"></a>
+                    </div>
+
+                </li>
+                <li id="11" draggable="true" ondragstart="drag(event)">
+                    <div id="div1">
+                        <div id="corner">
+                            <a id="count"></a>
+                        </div>
+                        <img id="dropimage" draggable="false">
+                        <img src="img/cross.png" id="cross" draggable="false">
+                        <a class="bev_name"></a>
+                        <a class="bev_price"></a>
+                    </div>
+
+                </li>
+                <li id="12" draggable="true" ondragstart="drag(event)">
+                    <div id="div1">
+                        <div id="corner">
+                            <a id="count"></a>
+                        </div>
+                        <img id="dropimage" draggable="false">
+                        <img src="img/cross.png" id="cross" draggable="false">
+                        <a class="bev_name"></a>
+                        <a class="bev_price"></a>
+                    </div>
+
+                </li>
+                <li id="13" draggable="true" ondragstart="drag(event)">
+                    <div id="div1">
+                        <div id="corner">
+                            <a id="count"></a>
+                        </div>
+                        <img id="dropimage" draggable="false">
+                        <img src="img/cross.png" id="cross" draggable="false">
+                        <a class="bev_name"></a>
+                        <a class="bev_price"></a>
+                    </div>
+
+                </li>
+                <li id="14" draggable="true" ondragstart="drag(event)">
+                    <div id="div1">
+                        <div id="corner">
+                            <a id="count"></a>
+                        </div>
+                        <img id="dropimage" draggable="false">
+                        <img src="img/cross.png" id="cross" draggable="false">
+                        <a class="bev_name"></a>
+                        <a class="bev_price"></a>
+                    </div>
+
+                </li>
+                <li id="15" draggable="true" ondragstart="drag(event)">
+                    <div id="div1">
+                        <div id="corner">
+                            <a id="count">10</a>
+                        </div>
+                        <img id="dropimage" draggable="false">
+                        <img src="img/cross.png" id="cross" draggable="false">
+                        <a class="bev_name"></a>
+                        <a class="bev_price"></a>
+                    </div>
+
+                </li>
+                <li id="16" draggable="true" ondragstart="drag(event)">
+                    <div id="div1">
+                        <div id="corner">
+                            <a id="count"></a>
+                        </div>
+                        <img id="dropimage" draggable="false">
+                        <img src="img/cross.png" id="cross" draggable="false">
+                        <a class="bev_name"></a>
+                        <a class="bev_price"></a>
+                    </div>
+
+                </li>
+                <li id="17" draggable="true" ondragstart="drag(event)">
+                    <div id="div1">
+                        <div id="corner">
+                            <a id="count"></a>
+                        </div>
+                        <img id="dropimage" draggable="false">
+                        <img src="img/cross.png" id="cross" draggable="false">
+                        <a class="bev_name"></a>
+                        <a class="bev_price"></a>
+                    </div>
+
+                </li>
+                <li id="18" draggable="true" ondragstart="drag(event)">
+                    <div id="div1">
+                        <div id="corner">
+                            <a id="count"></a>
+                        </div>
+                        <img id="dropimage" draggable="false">
+                        <img src="img/cross.png" id="cross" draggable="false">
+                        <a class="bev_name"></a>
+                        <a class="bev_price"></a>
+                    </div>
+
+                </li>
+                <li id="19" draggable="true" ondragstart="drag(event)">
+                    <div id="div1">
+                        <div id="corner">
+                            <a id="count"></a>
+                        </div>
+                        <img id="dropimage" draggable="false">
+                        <img src="img/cross.png" id="cross" draggable="false">
+                        <a class="bev_name"></a>
+                        <a class="bev_price"></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!---
+The strucure for the cart where the beverages from the vending machine can be dragged. The dragged or clicked beverages appear in a list with name, price and quantity. The bottom of the cart has a checkout button to complete purchases. 
+-->
+
+        <div id="cart" ondrop="drop(event)" class="box" ondragover="allowDrop(event)">
+            <h3>Cart</h3>
+            <div id="cart_table_container">
+                <table id="table_ID">
+                    <thead id="tHead_ID">
+                        <th id=thNamn>Name</th>
+                        <th id="thprice">Price</th>
+                        <th id="thquntity">Quantity</th>
+                        <th id="thwidth"></th>
+                    </thead>
+                    <tbody id="tBody_ID">
+
+                    </tbody>
+                    <tfoot id="tFoot_ID">
+                        <tr>
+                            <td colspan="2">Total</td>
+                            <td id="total">0 kr</td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+                <div id="tips_ID">
+                    <h3 id="infoText">Drag and drop beverages here</h3>
+
+                    <div id="iconContainer">
+                        <img src="img/icon_arrow.png" id="iconArrow" draggable="false">
+                        <img src="img/icon_beer.png" id="iconBeer" draggable="false">
+                    </div>
+
+                    <h3 id="infoText2">Or... <br><br><br>Tap the beverages you want</h3>
+
+                    <img src="img/icon_touch.png" id="iconTouch" draggable="false" )>
+                </div>
+
+
+            </div>
+            <button class="but1" id="checkout" type="submit" value="Checkout"> Checkout </button>
+        </div>
+    </div>
+
+
+</body>
+<html>
+
+<!---
+END of file index.html
+-->

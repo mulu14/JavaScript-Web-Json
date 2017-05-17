@@ -1,0 +1,47 @@
+/*
+
+File: login.css
+
+Version 1.0
+Author: Lukas Enander, Moa Mattsson, Siri Persson and Mulugeta Forsido Werkensche
+
+Styling for the login page of the system, where a user enter log in details in order to view pages that require access. Some of the styling of the page is done in styles.css. 
+*/
+
+
+/* styling for the login box */
+
+#login fieldset {
+    border: 1px solid gray;
+    border-radius: 1em;
+    padding: 1em;
+    background-color: white;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+
+/* styling for the field in the login box */
+
+#login fieldset p {
+    text-align: left;
+    margin: auto;
+    width: 80%;
+}
+
+
+/* styling for input field in the login box */
+
+#login fieldset p input {
+    width: 100%;
+    height: 1.6em;
+    padding-left: 0.6em;
+    background-color: #f9f9f9;
+    border: 1px inset lightgray;
+    border-radius: 0.5em;
+}
+
+
+/*
+END of file login.css
+*/

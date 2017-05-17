@@ -1,0 +1,185 @@
+<!---
+File: admin.html
+
+This file contains the basic HTML structure in order to create an interface for the admin page where the admin can manage beverages and users. The page has two tabs - one for beverage and one for user administration. 
+
+Version 1.0
+Author: Lukas Enander, Moa Mattsson, Siri Persson and Mulugeta Forsido Werkensche
+
+Requires the following files:
+
+reset.css
+styles.css
+admin.css
+
+script.js
+index.js
+logged.js
+admin.js
+user_admin.js
+dict_admin.js
+
+-->
+
+<!doctype html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/admin.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/logged.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/user_admin.js"></script>
+    <script src="js/dict_admin.js"></script>
+
+    <title> Jamaica Inn </title>
+
+</head>
+
+<!---
+Creating a script that calls on funtions when the body of the page is loaded. 
+- checkLogged(): in logged.js checks if the user is logged in and updates the header to show the full name of the logged in user. 
+- initialize(): checks which beverages that is in the vending machine. 
+- populateStockTable(): in admin.js. Adds all beverages in the stock to the left table (stocktable)
+- populateMachineTable(): in admin.js. Populates the table for the beverages in the vending machine (right table). 
+- populateUserTable(): in admin_user.js. Adds the users from database and local storage to the list of users
+- openTab("Beverages"): Changes tabs between "Beverages" and "Users"
+
+-->
+
+<body>
+    <script>
+        document.body.onload = function() {
+
+            checkLogged();
+            populateStockTable();
+            populateMachineTable();
+            populateUserTable();
+            openTab("Beverages");
+        };
+
+    </script>
+
+    <!---
+Header containing title, the menu bar with options and language support. 
+-->
+    <header>
+        <a href="javascript:void(0)" id="admin_text">Admin</a>
+        <h1 id="title"> Jamaica Inn </h1>
+        <ul id="flags">
+            <img src="img/swe.png" id="swe" onclick="translateFunctionSwe()">
+            <img src="img/uk.png" id="en" onclick="translateFunctionEn()">
+        </ul>
+        <nav>
+
+            <ul id=menu>
+                <li><a id="leftmenu" href="index.html">Start</a></li>
+                <li><a id="profiletab" href="javascript:void(0)">My profile</a> </li>
+            </ul>
+            <a id="status_loged_in"></a>
+            <ul id="logout">
+                <li><a href="index.html">Log out</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <!---
+The wrapper contains the two tabs:  beverages and user administration. Each tab contains specific information
+-->
+
+    <div id="wrapper">
+        <div id="admin_div1" class="box">
+
+            <!---
+The tabs for beverage and user administration
+-->
+            <ul id="tabs_list">
+                <li class="tabs"><a id="bev_tab" href="javascript:void(0)" onclick="openTab('Beverages')">Beverages</a></li>
+                <li class="tabs"><a id="user_tab" href="javascript:void(0)" onclick="openTab('Users')">Users</a></li>
+            </ul>
+
+            <!---
+Beverage administration page -->
+
+            <div id="Beverages" class="tab_content options">
+                <div id="wrapper_left">
+                    <h3 id="stock_title">Stock</h3>
+                    <button class="but2" id="edit_bev" type="submit" value="Checkout">Edit</button>
+                    <div id="admin_bevlist" class="graybox">
+                        <table>
+                            <thead>
+                                <th id="namntabell">Name</th>
+                                <th id="pristabell">Price</th>
+                                <th id="antaltabell">Quantity</th>
+
+                            </thead>
+                            <tbody id="stock_table" style="width=100%">
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+
+                <div id="wrapper_right">
+                    <h3>Vending machine</h3>
+                    <a id="numBev">0/20</a>
+                    <div id="admin_vending" class="graybox">
+                        <table id="machine_table_table">
+                            <thead>
+                                <th id="thLeft"></th>
+                                <th id="namntabell2">Name</th>
+                                <th id="pristabell2">Price</th>
+                                <th id="antaltabell2">Quantity</th>
+
+                            </thead>
+                            <tbody id="machine_table">
+                            </tbody>
+
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
+            <!---
+User administration page -->
+
+            <div id="Users" class="tab_content options">
+                <div id="userlist_wrapper">
+                    <h3 id="all_user_title">All users</h3>
+                    <button class="but2" id="add_user" type="submit" value="Checkout"> Add user </button>
+                    <div id="admin_userlist" class="graybox">
+                        <table id="user_table_table">
+
+                            <thead>
+                                <th id="usern">Username</th>
+                                <th id="fname">First name</th>
+                                <th id="lname">Last name</th>
+                                <th id="balance">Balance</th>
+                            </thead>
+                            <tbody id="user_table">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+<!---
+END of file admin.html
+-->

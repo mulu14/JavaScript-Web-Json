@@ -1,0 +1,1 @@
+These files are preferable opened in Google Chrome. Start the system by clicking on index.html. If used similar systems before, make sure to clear localStorage by wiring localStorage.clear() in the browser console. 

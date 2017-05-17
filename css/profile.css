@@ -1,0 +1,161 @@
+/*
+
+File: profile.css
+
+Version 1.0
+Author: Lukas Enander, Moa Mattsson, Siri Persson and Mulugeta Forsido Werkensche
+
+Styling for the profile page of the system. Some of the styling of the page is done in styles.css. 
+*/
+
+
+/* Table stylings*/
+
+table {
+    width: 100%;
+}
+
+thead {
+    text-align: left;
+    font-weight: bold;
+}
+
+#hist_table td,
+#hist_table th {
+    height: 40px;
+    line-height: 40px;
+}
+
+
+/* Wrapper for all information on the page*/
+
+#wrapper {
+    padding: 2%;
+    height: 75%;
+}
+
+#wrapper h3 {
+    text-align: left;
+}
+
+
+/* Box containing the table */
+
+#admin_div1 {
+    background-color: white;
+    width: 60%;
+    margin-left: 18%;
+    height: 98%;
+    padding: 2%;
+}
+
+.graybox {
+    border: 1px inset white;
+    border-radius: 1em 0 0 1em;
+    background-color: #f3f3f3;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    overflow-y: hidden;
+    width: auto;
+    overflow-y: scroll;
+}
+
+
+/* Styling for the history table*/
+
+#history {
+    width: 96%;
+    display: inline-block;
+    position: relative;
+    font-weight: bold;
+    left: 2%;
+    top: 5px;
+    border-top: 1.8px dashed lightgray;
+}
+
+
+/* Wrapper for name and balance information*/
+
+#myprofile_wrapper {
+    height: auto;
+    width: auto;
+    padding-bottom: 1.5%;
+}
+
+
+/* Table styling for name and balance information*/
+
+#info_table {
+    display: inline-block;
+    width: 35%;
+    text-align: left;
+    margin-left: 2%;
+    margin-bottom: 0.5%;
+}
+
+#info_table th {
+    width: 15%;
+}
+
+#info_table td,
+#info_table th {
+    height: 25px;
+    line-height: 25px;
+}
+
+.tBold {
+    font-weight: bold;
+}
+
+
+/* Box for puchase history*/
+
+#my_hist_box {
+    height: 400px;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+
+/* Box for puchase history*/
+
+#profile_img {
+    display: inline-block;
+    opacity: 0.5;
+    float: right;
+    margin-right: -5px;
+}
+
+
+/* styling for headers in history table*/
+
+thead {
+    height: 25px;
+    line-height: 25px;
+}
+
+
+/* WIdth for columns in history table */
+
+#date_hist {
+    width: 30%;
+}
+
+#bev_hist {
+    width: 60%;
+}
+
+#price_hist {
+    width: 20%;
+}
+
+#quant {
+    width: 10%;
+}
+
+
+/*
+END of file profile.css
+*/

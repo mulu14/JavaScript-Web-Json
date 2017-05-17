@@ -1,0 +1,101 @@
+/*
+
+File: confirmation.css
+
+Version 1.0
+Author: Lukas Enander, Moa Mattsson, Siri Persson and Mulugeta Forsido Werkensche
+
+Styling for the confirmation page of the system. Some of the styling of the page is done in styles.css. 
+*/
+
+
+/*
+Box containing all information 
+*/
+
+#conf_box {
+    background-color: white;
+    width: 40%;
+    height: 50%;
+    margin: auto;
+    margin-top: 2%
+}
+
+
+/*
+Image 
+*/
+
+#checkmark {
+    width: 10%;
+    position: relative;
+    top: 12px;
+    opacity: 0.5;
+}
+
+
+/*
+Confirmation text
+*/
+
+#conf_text {
+    display: inline-block;
+    margin-top: 10%;
+    margin-right: 2%;
+}
+
+
+/*
+box containing table with purchase details
+*/
+
+#my_reciept_box {
+    height: 150px;
+}
+
+
+/*
+text with user's balance and information how to log out 
+*/
+
+#balance_text,
+#logout_text {
+    margin-top: 5%;
+    text-align: center;
+    font-size: 13pt;
+}
+
+#balance_text {
+    width: auto;
+}
+
+
+/*
+wrapper for the title
+*/
+
+#complete_wrapper {
+    text-align: center;
+}
+
+
+/*
+Headers in the table of the beverage specifikation 
+*/
+
+#bev_hist {
+    width: 60%:
+}
+
+#price_hist {
+    width: 10%;
+}
+
+#quant {
+    width: 10%;
+}
+
+
+/*
+END of file confirmation.css
+*/

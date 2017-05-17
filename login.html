@@ -1,0 +1,116 @@
+<!---
+File: login.html
+
+This file contains the basic HTML structure in order to create an interface for the login page where the user sign in in order to get to a page of the system that requires access. 
+
+Version 1.0
+Author: Lukas Enander, Moa Mattsson, Siri Persson and Mulugeta Forsido Werkensche
+
+Requires the following files:
+
+reset.css
+styles.css
+login.css
+
+script.js
+login.js
+logged.js
+dict_login.js
+
+-->
+
+
+<!doctype html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/login.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/logged.js"></script>
+    <script src="js/dict_login.js"></script>
+
+    <title> Jamaica Inn </title>
+
+</head>
+
+<!---
+Creating a script that calls on funtions when the body of the page is loaded. 
+- checkLogged(): in logged.js checks if the user is logged in and updates the header to show the full name of the logged in user. 
+-->
+
+<body>
+    <script>
+        document.body.onload = function() {
+            checkLogged();
+        };
+
+    </script>
+
+    <!---
+Header containing title, the menu bar with options and language support. 
+-->
+    <header>
+        <a href="javascript:void(0)" id="admin_text">Admin</a>
+        <h1 id="title"> Jamaica Inn </h1>
+        <ul id="flags">
+            <img src="img/swe.png" id="swe" onclick="translateFunctionSwe()">
+            <img src="img/uk.png" id="en" onclick="translateFunctionEn()">
+        </ul>
+        <nav>
+
+            <ul id=menu>
+                <li><a id="leftmenu" href="index.html">Start</a></li>
+                <li><a id="profiletab" href="javascript:void(0)">My profile</a> </li>
+            </ul>
+            <a id="status_loged_in"></a>
+            <ul id="logout">
+                <li><a href="index.html">Log out</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <!---
+Login field where user enter username and password. 
+-->
+    <div id='login'>
+        <form>
+            <fieldset>
+                <!---
+Title 
+-->
+                <h3>Log in</h3>
+                <!---
+Username and password text and field for user to enter details with space inbetween. In the bottom a button to confirm the entered log in details. 
+-->
+                <p class="login_paragraph">
+                    <a id="user2">Username:<br></a>
+                    <input id="username" type="text" name="username" value="">
+                    <br>
+                    <br>
+                    <a id="password2">Password:<br></a>
+                    <input id="password" type="password" name="password" value="">
+                    <br>
+                    <br>
+                </p>
+                <button class="but1" type="button" value="Login" id="submit"> Login </button>
+
+            </fieldset>
+        </form>
+
+    </div>
+
+</body>
+
+<!---
+END of file login.html
+-->

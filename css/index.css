@@ -1,0 +1,255 @@
+/*
+
+File: index.css
+
+Version 1.0
+Author: Lukas Enander, Moa Mattsson, Siri Persson and Mulugeta Forsido Werkensche
+
+Styling for the index page of the system, which is denoted with "Start". Some of the styling of the page is done in styles.css. 
+*/
+
+
+/*
+width, margin and placing specifikation for tables
+*/
+
+#table_ID {
+    width=100%;
+}
+
+#thNamn {
+    width: 60%;
+}
+
+#thprice {
+    width: 15%;
+}
+
+#thquantity {
+    width: 15%;
+}
+
+#thwidth {
+    width: 10%;
+}
+
+#store {
+    margin: 2%;
+}
+
+#beverages {
+    width: 60%;
+    height: auto;
+    margin-right: 2%;
+    float: left;
+}
+
+#cart {
+    width: 31%;
+    float: left;
+    height: auto;
+}
+
+
+/*
+Square in corner of beverage
+*/
+
+#corner {
+    position: absolute;
+    width: 20%;
+    height: 15%;
+    background-color: rgba(249, 249, 249, 1);
+    border-radius: 0.7em 0.2em 0.2em 0.2em;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px outset lightgray;
+    left: -1px;
+    top: -1px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+    z-index: 10;
+}
+
+
+/*
+Text in corner of  beverages
+*/
+
+#count {
+    opacity: 1;
+}
+
+
+/*
+list of beverages
+*/
+
+#beverages li {
+    position: relative;
+    width: 17%;
+    height: 32%;
+    background-color: #f9f9f9;
+    display: inline-block;
+    border: 1px outset lightgray;
+    border-radius: 0;
+    margin: 1%;
+    border-radius: 0.7em;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+/*
+Specifikations for all beverages
+*/
+
+#div1 img {
+    display: inline-block;
+    height: 95px;
+    border: 1px outset lightgray;
+    width: 100%;
+    margin-top: -1px;
+    margin-left: -1px;
+    border-radius: 0.7em 0.7em 0 0;
+    box-shadow: inset 0px -1px 3px rgba(0, 0, 0, 0.25);
+}
+
+#cross {
+    position: absolute;
+    box-shadow: none;
+    border: 0px solid black;
+    box-shadow: none;
+    bottom: 35px;
+    left: 0px;
+    width=98%;
+    height=98%;
+    opacity: 0.3;
+}
+
+.outOfStock {
+    -webkit-filter: brightness(0.9) grayscale(1) opacity(1);
+}
+
+#div1 {
+    position: relative;
+}
+
+#div1 a {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 100%;
+    line-height: 100%;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+th {
+    text-align: left;
+    font-weight: bold;
+}
+
+td,
+th {
+    height: 30px;
+    line-height: 30px;
+}
+
+tfoot {
+    border-top: 1px solid black;
+    font-weight: bold;
+}
+
+
+/*
+Box containg the cart table
+*/
+
+#cart_table_container {
+    border: 1px inset white;
+    border-radius: 1em;
+    background-color: #f3f3f3;
+    padding: 10px;
+    max-width=100%;
+    height: 461px;
+    overflow-y: hidden;
+}
+
+h3 {
+    margin-top: 3px;
+    margin-bottom: 7px;
+}
+
+
+/*
+Button for checkout
+*/
+
+#checkout {
+    display: inline-block;
+    width: 80%;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+
+/*
+Text in cart when empty
+*/
+
+#infoText,
+#infoText2 {
+    color: rgba(0, 0, 0, 0.20);
+    text-align: center;
+    font-weight: 900;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#tdHey {}
+
+#iconContainer {
+    width: 100%;
+    height: 50%;
+    padding-top: 5%;
+    margin-top: -5%;
+}
+
+.dotText {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 15px;
+    max-width: 50px
+}
+
+#iconBeer {
+    display: inline-block;
+    opacity: 0.20;
+    width: 15%;
+}
+
+#iconArrow {
+    display: inline-block;
+    opacity: 0.20;
+    width: 20%;
+    margin-left: 32%;
+}
+
+#infoText2 {
+    margin-top: 10%;
+}
+
+#iconTouch {
+    opacity: 0.20;
+    width: 20%;
+    margin-left: 40%;
+    margin-top: 0%;
+}
+
+
+/*
+END of file index.css
+*/

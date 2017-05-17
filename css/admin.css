@@ -1,0 +1,304 @@
+/*
+
+File: admin.css
+
+Version 1.0
+Author: Lukas Enander, Moa Mattsson, Siri Persson and Mulugeta Forsido Werkensche
+
+Styling for the admin page of the system. Some of the styling of the page is done in styles.css. 
+*/
+
+
+/*
+Width for the columns in the user-tab of admin page */
+
+#usern,
+#fname,
+#lname,
+#balance {
+    width: 22%;
+}
+
+
+/*
+width for columns in Stock-table and Vending machine. 
+*/
+
+#thLeft {
+    width: 8%;
+}
+
+#namntabell,
+#namntabell2 {
+    width: 60%;
+}
+
+#pristabell,
+#pristabell2 {
+    width: 16%;
+}
+
+#antaltabell,
+#antaltabell2 {
+    width: 16%;
+}
+
+
+/*
+Table specifications
+*/
+
+table {
+    width: 100%;
+}
+
+thead {
+    text-align: left;
+    font-weight: bold;
+}
+
+td,
+th {
+    height: 40px;
+    line-height: 40px;
+}
+
+
+/*
+The wrapper contains the two tabs-beverages and users 
+*/
+
+#wrapper {
+    padding: 2%;
+    height: calc( 100% - 160px);
+}
+
+#Users {
+    height: 100%;
+}
+
+
+/*
+the white box that the wrapper contains
+*/
+
+#admin_div1 {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    padding: 0%;
+}
+
+
+/*
+tabs for the page different options */
+
+.tabs {
+    display: inline-block;
+}
+
+.tabs a {
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 2%;
+    width: 7em;
+    font-size: 1em;
+    margin-top: 0em;
+    margin-bottom: .8em;
+    border: 1px solid black;
+    height: 40px;
+    line-height: 40px;
+    color: black;
+    text-decoration: none;
+}
+
+#bev_tab {
+    border-left: none;
+    border-top: none;
+    border-radius: 0.85em 0 0 0;
+    border-color: gray;
+}
+
+#tabs_list {
+    border-bottom: 1px solid gray;
+    height: 40px;
+    background-color: #f3f3f3;
+    border-radius: 1em 1em 0 0;
+    box-shadow: inset 2px -2px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+#user_tab {
+    border-top: none;
+    margin-left: -4px;
+    border-color: gray;
+}
+
+
+/*
+wrappers for different tab-options
+*/
+
+#wrapper_right {
+    width: 48%;
+    height: calc( 100% - 60px);
+    display: inline-block;
+    float: right;
+}
+
+#Beverages {
+    padding: 2%;
+    height: calc( 100% - 80px);
+}
+
+#wrapper_left {
+    width: 48%;
+    height: calc( 100% - 60px);
+    display: inline-block;
+    min-width: 200px;
+}
+
+#userlist_wrapper {
+    height: calc( 100% - 170px);
+    width: 100%;
+    display: inline-block;
+}
+
+
+/*
+Box for table content
+*/
+
+.graybox {
+    margin-top: 2%;
+    border: 1px inset white;
+    border-radius: 1em;
+    background-color: #f3f3f3;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    width: auto;
+}
+
+
+/*
+Specifikations for the box containing stock table
+*/
+
+#admin_bevlist {
+    width: auto;
+    border-radius: 1em 0 0 1em;
+    margin-top: 0px;
+}
+
+
+/*
+Specifikations for the box containing vending machine table
+*/
+
+#admin_vending {
+    width: auto;
+    border-radius: 1em 0 0 1em;
+    margin-top: 6px;
+}
+
+
+/*
+Button for editing stock table
+*/
+
+#edit_bev {
+    position: relative;
+    border-radius: 1em 1em 0 0;
+    box-shadow: none;
+    left: 72.5%;
+    width: 16%;
+    top: 1px;
+    height: 25px;
+    margin-bottom: 0px;
+}
+
+
+/*
+Text for number of beverages in vending machine table
+*/
+
+#numBev {
+    display: inline-block;
+    margin-left: 55%;
+}
+
+
+/*
+Button for adding new user
+*/
+
+#add_user {
+    width: 10%;
+    position: relative;
+    margin-left: 86%;
+    height: 30px;
+    margin-right: 3.9%;
+    border-radius: 1em 1em 0em 0em;
+    box-shadow: none;
+}
+
+
+/*
+title spcifikations
+*/
+
+h3 {
+    display: inline-block;
+    margin-bottom: 0px;
+}
+
+
+/*
+title for user option
+*/
+
+#all_user_title {
+    position: relative;
+    top: 20px;
+}
+
+
+/*
+wrapper for the table on the user tab
+*/
+
+#userlist_wrapper {
+    padding: 2%;
+}
+
+
+/*
+Box containing user table
+*/
+
+#admin_userlist {
+    margin-top: -2px;
+    margin-right: 0px;
+    width: 94%;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    #wrapper_left {
+        width: 100%;
+        height: calc( 50% - 60px);
+    }
+    #wrapper_right {
+        width: 100%;
+        height: calc( 50% - 60px);
+    }
+    #edit_bev {
+        left: 75.5%;
+    }
+}
+
+
+/*
+END of file admin.css
+*/

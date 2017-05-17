@@ -1,0 +1,316 @@
+/*
+
+File: styles.css
+
+Version 1.0
+Author: Lukas Enander, Moa Mattsson, Siri Persson and Mulugeta Forsido Werkensche
+
+Styling sheet for elements user in several pages. 
+*/
+
+
+/* importing font from Google library*/
+
+@import 'https://fonts.googleapis.com/css?family=Pacifico|Dosis';
+
+/* title and subtitle stylings*/
+
+h1 {
+    font-size: 2em;
+    margin-top: .7em;
+    margin-bottom: .7em;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-top: 0em;
+    margin-bottom: .8em;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-top: .3em;
+    margin-bottom: .8em;
+}
+
+
+/* styling of the background of pages*/
+
+html {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+body {
+    background-color: #56c1ff;
+    font-family: Dosis, sans-serif;
+    /*max-width: 1024px;
+    height: 768px;*/
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    margin: auto auto;
+}
+
+
+/* placing and styling of page header*/
+
+header {
+    text-align: center;
+    height: 120px;
+}
+
+#jamaica {
+    display: inline-block;
+    font-size: 2em;
+    margin-left: 25%;
+    margin-top: 8px;
+}
+
+
+/* admin option styling and placing*/
+
+#admin_text {
+    display: inline-block;
+    float: left;
+    margin: 1%;
+    margin-left: 1%;
+    color: black;
+}
+
+
+/* title of page styling and placing*/
+
+#title {
+    display: inline-block;
+    font-family: 'Pacifico', cursive;
+    font-size: 3em;
+    color: white;
+    text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray, 3px 3px 5px rgba(0, 0, 0, 0.2);
+    font-weight: normal;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    z-index: 2;
+    position: relative;
+    bottom: -10px;
+    left: 35px;
+}
+
+
+/* stylings for menu bar*/
+
+nav {
+    background-color: white;
+    border-radius: 1em 0 1em 1em;
+    margin: 0% 2% 0% 2%;
+    height: 50px;
+    box-shadow: 8px 8px 5px -5px rgba(0, 0, 0, 0.2);
+    border: 1px solid gray;
+    display: inline-block;
+    width: 96%;
+    z-index: 1;
+}
+
+
+/* styling for options in menu bar*/
+
+nav li {
+    display: inline;
+}
+
+#status_loged_in {
+    width: 200px;
+    position: relative;
+    left: 25%;
+}
+
+#logout {
+    display: inline-block;
+    float: right;
+    border-left: 1px solid gray;
+    border-right: 0px solid rgba(0, 0, 0, 0);
+}
+
+#leftmenu {
+    border-radius: 1em 0 0 1em;
+    border-right: 1px solid gray;
+}
+
+#menu {
+    display: inline-block;
+    float: left;
+}
+
+nav a {
+    display: inline-block;
+    text-align: center;
+    font-size: 1em;
+    color: Black;
+    width: 100px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    text-decoration: none;
+}
+
+nav a:hover {}
+
+nav a.current {
+    background-color: #eaf5ff;
+    box-shadow: inset 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+#profiletab {
+    border-right: 1px solid gray;
+    margin-left: -3px;
+}
+
+
+/* styling language support*/
+
+#flags {
+    display: inline-block;
+    float: right;
+    margin: 8px;
+    margin-right: 2%;
+}
+
+#flags a {
+    background-image: url(../img/uk_flag.jpg);
+    background-position: center;
+    background-size: 100%;
+}
+
+#flags img {
+    width: 45px;
+    height: 26px;
+    border-radius: 1em 1em 0 0;
+    margin-left: 0.4em;
+    border: 1px solid gray;
+    position: relative;
+    top: 34px;
+    left: 1px;
+    opacity: 1;
+}
+
+#flags img:hover {
+    border: 1px dashed white;
+}
+
+
+/* buton styling*/
+
+.but1 {
+    width: 50%;
+    height: 2.8em;
+    background-color: #87D37C;
+    border: 1px solid #5c9154;
+    border-radius: 0.5em;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0.5em;
+}
+
+.but1:hover {
+    background-color: #a1e298;
+}
+
+.but2 {
+    width: 50%;
+    height: 2.8em;
+    background-color: #77d1ff;
+    border: 1px solid #4c86a3;
+    border-radius: 0.5em;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0.5em;
+}
+
+.but2:hover {
+    background-color: #99dcff;
+}
+
+.but3 {
+    background-color: #e27461;
+    border: 1px solid #4c86a3;
+    border-radius: 0.5em;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+/* styling for the boxes that contains inforamtion*/
+
+.box {
+    display: inline-block;
+    border: 1px solid gray;
+    border-radius: 1em;
+    padding: 1em;
+    background-color: white;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+    background-color: white;
+}
+
+.box2 {
+    border: 1px solid gray;
+    border-radius: 1em;
+    padding: 1em;
+    background-color: white;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+    background-color: white;
+}
+
+
+/* placing and sizing of menu bar options*/
+
+#login,
+#index,
+#admin {
+    width: 40%;
+    margin: 10% auto;
+    padding: 3%;
+}
+
+
+/* styling for table container and table specifikations*/
+
+.graybox {
+    margin-top: 2%;
+    border: 1px inset white;
+    border-radius: 1em;
+    background-color: #f3f3f3;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    width: auto;
+}
+
+th {
+    text-align: left;
+    font-weight: bold;
+}
+
+td,
+th {
+    height: 30px;
+    line-height: 30px;
+}
+
+tfoot {
+    border-top: 1px solid black;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    #status_loged_in {
+        left: 0%;
+    }
+    #flags img {
+        top: 28px;
+    }
+}
+
+
+/*
+END of file profile.css
+*/

@@ -1,0 +1,147 @@
+<!---
+File: confirmation.html
+
+This file contains the basic HTML structure in order to create an interface for the confirmation page. The page is shown when a user has completed a purchase. 
+
+Version 1.0
+Author: Lukas Enander, Moa Mattsson, Siri Persson and Mulugeta Forsido Werkensche
+
+Requires the following files:
+
+reset.css
+styles.css
+index.css
+confirmation.css
+
+script.js
+confirmation.js
+logged.js
+dict_conf.js
+
+-->
+
+<!doctype html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/confirmation.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/confirmation.js"></script>
+    <script src="js/logged.js"></script>
+    <script src="js/dict_conf.js"></script>
+
+
+
+
+    <title> Jamaica Inn</title>
+
+
+
+</head>
+
+<!---
+Creating a script that calls on funtions when the body of the page is loaded. 
+- checkLogged(): in logged.js. Checks if the user is logged in and updates the header to show the full name of the logged in user. 
+- start_conf(): in confirmation.js. Gets the information what is bought from the Cart on the index page (called Start in the window) and prints it in a table. Also get the logged in users balance and print it. 
+
+-->
+
+<body>
+    <script>
+        document.body.onload = function() {
+            checkLogged();
+            start_conf();
+        };
+
+    </script>
+
+    <!---
+Header containing title, the menu bar with options and language support. 
+-->
+    <header>
+        <a href="javascript:void(0)" id="admin_text">Admin</a>
+        <h1 id="title"> Jamaica Inn </h1>
+        <ul id="flags">
+            <img src="img/swe.png" id="swe" onclick="translateFunctionSwe()">
+            <img src="img/uk.png" id="en" onclick="translateFunctionEn()">
+        </ul>
+        <nav>
+
+            <ul id=menu>
+                <li><a id="leftmenu" href="index.html">Start</a></li>
+                <li><a id="profiletab" href="javascript:void(0)">My profile</a> </li>
+            </ul>
+            <a id="status_loged_in"></a>
+            <ul id="logout">
+                <li><a href="index.html">Log out</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!---
+The conf_box contains all the information on the confirmation page and is used to make placing the content easier.
+-->
+    <div id="conf_box" class="box2">
+        <div id="complete_wrapper">
+
+            <!---
+The title of the page, informing the user that the purchase went trough. 
+-->
+            <h2 id="conf_text"> Purchase completed!</h2>
+            <img src="img/checkmark.png" id="checkmark" draggable="false">
+        </div>
+
+        <!---
+A table with all the purchased beverages. The table has the title "Reciept" and three columns: Beverges, Price and Quantity. 
+-->
+        <a id="reciept_text"> Reciept</a>
+
+        <div id="my_reciept_box" class="graybox">
+
+            <table>
+                <thead>
+                    <th id="bev_hist">Beverage</th>
+                    <th id="price_hist">Price</th>
+                    <th id="quant">Quantity</th>
+
+                </thead>
+                <tbody id="reciept_table"> </tbody>
+                <tfoot id="reciept_foot">
+                    <tr>
+                        <td colspan="2">Total</td>
+                        <td id="total"></td>
+                    </tr>
+                </tfoot>
+
+            </table>
+
+            <!---
+Text with the user's balance and information how to sign out.  
+-->
+        </div>
+
+        <h2 id="balance_text"> Balance</h2>
+        <h2 id="logout_text"> Don't forget to sign out in upper right corner!</h2>
+
+
+    </div>
+</body>
+
+<html>
+
+
+<!---
+END of file confirmation.html
+-->
